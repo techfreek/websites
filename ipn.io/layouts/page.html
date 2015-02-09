@@ -27,9 +27,50 @@
 
   <style type="text/css">
 
+  .ipw-container {
+    min-width: 380px;
+  }
+
   .ipw-page {
-    box-shadow: 0px 0px 10px #888888;
-    margin: 50px 0px;
+    /*box-shadow: 0px 0px 10px #888888;*/
+    /*margin: 20px 20px;*/
+  }
+
+  .ipw-main-title {
+    color: #ffffff;
+    text-align: center;
+    font-size: 100px;
+  }
+
+  .ipw-main-section {
+    min-height: 100px;
+  }
+
+  .ipw-main-img {
+    text-align: center;
+    display: inline;
+    overflow: hidden;
+    height:100%;
+
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+  }
+
+  .ipw-main-img img {
+    min-height: 100%;
+    /*min-width: 100%;*/
+  }
+
+  .ipw-header-continue-angle {
+    font-stretch: expanded;
+    font-size: 82px;
+    font-weight: 100;
+    -webkit-font-smoothing:antialiased;
+    color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.5,1.0);
   }
 
   .ipw-copyright {
@@ -70,7 +111,7 @@
 
   .ipw-section-hr {
     border-top: solid 2px rgba(0, 0, 0, 0.2);
-    margin: 15px auto;
+    /*margin: 15px auto;*/
   }
 
   .ipw-footer .ipw-copyright {
@@ -82,7 +123,7 @@
 
   .ipw-footer .ipw-social-media {
     text-align: right;
-    margin-right: 20px;
+    /*margin-right: 20px;*/
     /*margin-top: 10px;*/
   }
 
@@ -108,7 +149,7 @@
 </head>
 <body>
 
-<div class="container" style="min-width: 380px;">
+<div class="container-fluid ipw-container">
   <div class="ipw-page">
 
   <!-- we have 3+ rows: header, content+, footer -->
@@ -116,7 +157,11 @@
   <!-- header -->
   <div class="row">
     <div class="col-md-12" class="ipw-main-section">
-      <img src="{{ mainimg }}" class="ipw-main-img" />
+      <div class="ipw-main-img">
+        <img src="styles/img/main/{{ mainimg }}" />
+      </div>
+
+      <!-- top links -->
       <div class="row">
         <div clas="col-sm-4">
           <img src="static/img/{{ site }}-logo.png" />
@@ -128,17 +173,36 @@
           <img src="static/img/protocol-logo.png" />
         </div>
       </div>
+
+      <!-- headline -->
+      <div class="row">
+        <div class="col-xs-12 ipw-main-title">
+          IPFS
+        </div>
+      </div>
+
+      <!-- continue arrow -->
+      <div class="row">
+        <div class="col-xs-12" style="text-align: center;">
+          <i class="fa fa-angle-down fa-5x ipw-header-continue-angle"></i>
+        </div>
+      </div>
+
     </div>
   </div> <!-- header -->
 
   <!-- content -->
-  {{{ contents }}}
+  <div class="row">
+    <div class="col-xs-12">
+    {{{ contents }}}
+    </div>
+  </div>
 
   <!-- footer -->
   <div class="row">
     <div class="ipw-footer col-xs-12">
-      <hr class="ipw-section-hr" />
       <div class="row"> <!-- footer-nav -->
+        <hr class="ipw-section-hr" />
         <div class="col-sm-3 ipw-logo">
           IPN
         </div>
@@ -189,8 +253,8 @@
       </div> <!-- footer-nav -->
 
       <!-- copyright -->
-      <hr class="ipw-section-hr" />
       <div class="row">
+        <hr class="ipw-section-hr" />
         <div class="col-xs-12">
           <div class="ipw-copyright">
             &copy; Interplanetary Networks, Inc.
