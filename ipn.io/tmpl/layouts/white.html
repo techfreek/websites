@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <!-- <link rel="icon" href="favicon.ico"> -->
+
+    <title>{{ title }}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/styles/bootstrap/bootstrap.min.css" rel="stylesheet">
+
+    <!-- font-awesome -->
+    <link href="/styles/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- custom css -->
+    <!-- <link href="css/style.css" rel="stylesheet"> -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <style type="text/css">
+
+  .ipw-container {
+    min-width: 380px;
+  }
+
+  .ipw-page {
+    /*box-shadow: 0px 0px 10px #888888;*/
+    /*margin: 20px 20px;*/
+  }
+
+  .ipw-main-title {
+    color: #ffffff;
+    text-align: center;
+    font-size: 100px;
+  }
+
+  .ipw-main-section {
+    background-position: 50% 80%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+   }
+
+   .ipw-main-section .ipw-tagline {
+    -webkit-font-smoothing: antialiased;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 42px;
+   }
+
+  .ipw-header-continue-angle {
+    font-stretch: expanded;
+    font-size: 82px;
+    font-weight: 100;
+    -webkit-font-smoothing:antialiased;
+    color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.5,1.0);
+  }
+
+  .ipw-copyright {
+    text-align: center;
+
+  }
+
+  .ipw-centered-left {
+    margin: 0px auto;
+    text-align: left;
+  }
+
+
+  .ipw-footer .ipw-logo {
+    text-align: center;
+    color: #0F1D57;
+    font-size: 32px;
+    font-weight: bold;
+    padding-bottom: 20px;
+  }
+
+  .ipw-footer .ipw-nav {
+    margin-bottom: 10px;
+  }
+
+  .ipw-footer .ipw-nav-col {
+    line-height: 2.0;
+    font-size: 12px;
+    color: #aaa;
+    /*font-weight: bold;*/
+    width: 50px;
+  }
+
+  .ipw-footer .ipw-nav-col h5 {
+    color: #0F1D57;
+    font-weight: bold;
+  }
+
+  hr.ipw-sectioner {
+    /*border-top: solid 2px rgba(0, 0, 0, 0.2);*/
+    margin-top: 35px;
+    margin-bottom: 35px;
+  }
+
+  hr.ipw-spacer {
+    height: 50px;
+    border: 0px;
+  }
+
+  .ipw-footer .ipw-copyright {
+    padding: 0px 0px 15px;
+    font-size:10px;
+    /*font-weight:200;*/
+    color: #aaaaaa;
+  }
+
+  .ipw-footer .ipw-social-media {
+    text-align: center;
+    /*margin-right: 20px;*/
+    /*margin-top: 10px;*/
+  }
+
+  .ipw-footer .ipw-social-media i {
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+    margin: 5px 3px;
+    font-size: 18px;
+    text-align: center;
+    vertical-align: middle;
+
+    border-radius: 100%;
+    border: 2px #cccccc solid;
+    color: #cccccc;
+    /*background: #cccccc;*/
+  }
+
+  .ipw-footer .ipw-social-media i:hover {
+    color: #0F1D57;
+    border-color: #0F1D57;
+  }
+
+
+  .ipw-glow {
+    animation:glow 2s linear infinite;
+    -webkit-animation:glow 2s linear infinite;
+  }
+
+  @-webkit-keyframes glow {
+    0%,100%{
+      text-shadow:0 0 0px cyan;
+    }
+    50%{
+      text-shadow:0 0 4px cyan;
+    }
+  }
+
+  blockquote {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: inherit;
+  }
+
+  </style>
+
+  <body>
+  <meta name="description" content="{{ description }}">
+</head>
+<body>
+
+<div class="container-fluid ipw-container">
+  <div class="ipw-page">
+
+  <!-- header -->
+  <div class="row ipw-main-section"
+    style="background-image: url(/styles/img/main/{{ mainimg }});">
+    <div class="col-md-12">
+      <!-- top links -->
+
+      <!-- headline -->
+      <div class="row">
+        <div class="col-xs-12 ipw-main-title">
+          {% block splash %}
+            <div style="padding: 100px 0px; height: 250px;">
+              <div class="ipw-tagline">
+                {{ tagline }}
+              </div>
+            </div>
+          {% endblock %}
+        </div>
+      </div>
+      <!-- continue arrow -->
+      {% if splashcaret %}
+        <div class="row">
+          <div class="col-xs-12" style="text-align: center;">
+            <i class="fa fa-angle-down fa-5x ipw-header-continue-angle"></i>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div> <!-- header -->
+
+
+  <!-- content -->
+  <div class="row">
+    <div class="col-xs-12">
+    {% block content %}
+      {{ contents }}
+    {% endblock %}
+    </div>
+  </div>
+
+  {% include "tmpl/partials/footer.html" %}
+
+  </div> <!-- ipw-page -->
+</div> <!-- container -->
+
+</body>
+</html>
