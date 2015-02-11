@@ -1,0 +1,41 @@
+---
+mainimg: earth_sunrise1.jpg
+template: tmpl/layouts/white.html
+tagline:
+---
+{% set pgns = 'docs' %}
+{% include "tmpl/partials/ipfs.pagenav.html" %}
+
+<div class="col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2" style="font-family: Oxygen;">
+{% markdown %}
+
+# The IPFS Project
+
+IPFS is a new hypermedia distribution protocol, addressed by content and
+identities. IPFS enables the creation of completely distributed applications.
+It aims to make the web faster, safer, and more open.
+
+IPFS is an open source project developed by the team at
+[Interplanetary Networks](//ipn.io) and many contributors
+from the open source community.
+
+## Community
+
+The IPFS community maintains the following communication channels:
+
+- github: [github.com/jbenet/ipfs](https://github.com/jbenet/ipfs) for the IPFS spec
+- github: [github.com/jbenet/go-ipfs](https://github.com/jbenet/go-ipfs) for the go-ipfs implementation
+- IRC: `#ipfs` on irc.freenode.net for live help + some dev discussions ([Logs](https://botbot.me/freenode/ipfs/))
+- Google Group: [ipfs-users@groups.google.com](https://groups.google.com/forum/#!forum/ipfs-users)
+- Twitter: [@IPFSbot](https://twitter.com/ipfsbot) for some news
+
+## Documentation
+
+- [Install](install)
+- [Getting Started](getting-started)
+- [Command Reference](commands)
+- [API Reference](api)
+
+
+{% endmarkdown %}
+</div>

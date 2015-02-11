@@ -1,0 +1,34 @@
+
+<style type="text/css">
+
+.ipw-page-nav {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #cccccc;
+}
+
+.ipw-page-nav .nav > li.active > a,
+.ipw-page-nav .nav > li.active > a:focus,
+.ipw-page-nav .nav > li.active > a:hover {
+  background-color: transparent;
+  border-bottom: #337ab7 2px solid;
+  margin-bottom: -1px;
+}
+
+.ipw-page-nav .nav > li > a:focus,
+.ipw-page-nav .nav > li > a:hover {
+  background-color: transparent;
+  border-bottom: #cccccc 2px solid;
+  margin-bottom: -1px;
+}
+
+</style>
+
+{% macro active(a, b) %}
+  role="presentation"
+  foo="{{a}}"
+  bar="{{b}}"
+  {% if a == b %}
+  class="active"
+  {% endif %}
+{% endmacro %}
