@@ -1,4 +1,5 @@
 ---
+baseurl: ../
 mainimg: earth_sunrise1.jpg
 template: tmpl/layouts/white.html
 tagline: Join Us
@@ -41,61 +42,104 @@ $(document).ready(function() {
   <div class="col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2" style="text-align: center; font-family: Oxygen;">
     <h2 id="mission">Work With Us</h2>
     <p>We make protocols, systems, and tools that anybody can use.
-    <br />If these are useful to you, join us in developing them.
-    <br /><a href="//ipn.io/about#open-source">Our work is Open Source</a> &mdash;
-    you're invited to contribute.</p>
+    <br /><a href="./#open-source">Our work is Open Source</a>
+    and our community is inclusive.
+    <br />You -- and everyone -- are invited to contribute!</p>
   </div>
 </div>
 
 <div class="row">
   <hr class="ipw-spacer" style="height: 10px;" />
-  <div class="col-lg-8 col-lg-offset-2 col-sm-10 col-sm-offset-1" style="text-align: center;">
-    <h2 id="mission">Looking for more...</h2>
-    <p>We are expanding our core team.
-      <br />We have the following openings:
+  <div class="col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2"
+    style="text-align: center;">
+    <h2 id="mission">Join Us</h2>
+    <p>Our core team drives development of the things we make.
+    The roles below are those we need filled most.
+    If you are interested in joining us, but are not
+      sure you fit any of these roles, or your timing is difficult,
+      reach out anyway!
+    Let's figure out together when our timelines match up.
     </p>
-
-    <div class="row">
-      <hr class="ipw-spacer" style="height: 10px;" />
-      <div class="col-sm-4 col-md-offset-1" style="margin-bottom: 30px;">
-        <ul class="nav nav-pills nav-stacked ipw-job-links">
-
-          {% for job, title in jobs %}
-            <li role="presentation" id="link-{{ job }}">
-              <a href="#{{ job }}" onclick="jobselect('{{ job }}'); return false;">
-              {{ title }}</a></li>
-          {% endfor %}
-
-        </ul>
-      </div>
-
-      <div class="col-sm-6" style="text-align: left;">
-
-{% markdown %}
-{% for job, i in jobs %}
-  <div id="text-{{ job }}" class="ipw-job-desc hide"><div></div>
-
-{% include "src/ipn.io/join/" + job + ".md" %}
-
-  </div>
-
-{% endfor %}
-{% endmarkdown %}
-    </div>
-
   </div>
 </div>
 
 <style type="text/css">
-.ipw-apply * {
+.ipw-job {
+  background-color: rgba(33, 52, 105, 0.04);
+}
+
+.ipw-job > * {
+  padding-top:25px;
+  padding-bottom:25px;
+}
+
+.ipw-job > :first-child {
+}
+
+.ipw-job > :last-child {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.ipw-section-dark {
+}
+
+.ipw-job-links {
   margin-top: 1em;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.ipw-job-text {
+  text-align: left;
+  min-height: 250px;
+  padding-left: 25px;
 }
 
 </style>
 
+<hr class="ipw-spacer" style="height: 10px;" />
+<div class="row ipw-section-dark ipw-job">
+  <div class="col-sm-6">
+    <div class="col-sm-offset-3 col-md-offset-4 ipw-job-links">
+      <ul class="nav nav-pills nav-stacked">
 
+        {% for job, title in jobs %}
+          <li role="presentation" id="link-{{ job }}">
+            <a href="#{{ job }}" onclick="jobselect('{{ job }}'); return false;">
+            {{ title }}</a></li>
+        {% endfor %}
+
+      </ul>
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+    <div class="ipw-job-text">
+
+    {% for job, i in jobs %}
+    <div id="text-{{ job }}" class="ipw-job-desc hide"><div></div>
+
+{% markdown %}
+{% include "src/ipn.io/join/" + job + ".md" %}
+{% endmarkdown %}
+
+    </div>
+    {% endfor %}
+
+    </div>
+  </div>
+</div>
+
+
+<style type="text/css">
+.ipw-apply * {
+}
+
+</style>
+
+<div class="row">
+<hr class="ipw-spacer" style="height: 10px;" />
 <div class="col-md-6 col-md-offset-3 ipw-apply" style="font-size: 16px;">
-<hr class="ipw-divisor" style="height: 10px;" />
 {% markdown %}
 
 #### To apply, just open a text editor and type
@@ -122,4 +166,5 @@ what makes you different?
 <a class="ipw-apply-email" href="mailto:join+dsyseng@ipn.io">join+dsyseng@ipn.io</a></strong>.
 And ask us any questions you have!
 
+</div>
 </div>

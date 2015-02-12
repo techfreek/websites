@@ -1,7 +1,7 @@
 ### Product Manager
 
 Required Experience:
-- managing a software team of 3+ people
+- managing a software team of ~5 people
 - driving product development
 
 Ideal Experience:

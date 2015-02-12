@@ -4,7 +4,6 @@ Required Experience:
 - designing and implementing software systems
 - building unix style commandline tools
 - good understanding of the Web's application model
-- CS degree equivalent
 
 Ideal Experience:
 - implementing UNIX file systems

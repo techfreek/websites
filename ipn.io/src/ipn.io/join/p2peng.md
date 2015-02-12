@@ -3,7 +3,6 @@
 Required Experience:
 - designing and implementing distributed software systems
 - implemented applications surpassing p2p network challenges
-- CS degree equivalent
 
 Ideal Experience:
 - implementing bittorrent clients
