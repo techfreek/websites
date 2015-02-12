@@ -12,23 +12,28 @@ tagline: Join Us
   ["dsyseng", "Distributed Systems Engineer"],
   ["p2peng", "Peer-to-Peer Engineer"],
   ["cryptoeng", "Cryptographic Systems Engineer"],
-  ["syseng", "Systems Engineer"]
+  ["syseng", "Systems Engineer"],
+  ["webeng", "Web Engineer"]
 ] %}
 
 <script type="text/javascript">
 function jobselect(job) {
   // color links
   $('.ipw-job-links li').removeClass('active')
-  $('.ipw-job-links li#' + job).addClass('active')
+  $('.ipw-job-links li#link-' + job).addClass('active')
 
   // hide/show text
   $('.ipw-job-desc').addClass('hide')
-  $('.ipw-job-desc#' + job).removeClass('hide')
+  $('.ipw-job-desc#text-' + job).removeClass('hide')
 
   var email = 'join+'+job+'@ipn.io'
   $('.ipw-apply-email').attr('href', 'mailto:' + email).text(email)
+  window.location.hash = '#' + job
 }
-$(document).ready(function() { jobselect('pm') })
+$(document).ready(function() {
+  var job = window.location.hash.substring(1) || 'pm'
+  jobselect(job)
+})
 </script>
 
 <div class="row">
@@ -56,8 +61,8 @@ $(document).ready(function() { jobselect('pm') })
         <ul class="nav nav-pills nav-stacked ipw-job-links">
 
           {% for job, title in jobs %}
-            <li role="presentation" id="{{ job }}">
-              <a href="#" onclick="jobselect('{{ job }}'); return false;">
+            <li role="presentation" id="link-{{ job }}">
+              <a href="#{{ job }}" onclick="jobselect('{{ job }}'); return false;">
               {{ title }}</a></li>
           {% endfor %}
 
@@ -68,9 +73,9 @@ $(document).ready(function() { jobselect('pm') })
 
 {% markdown %}
 {% for job, i in jobs %}
-  <div id="{{ job }}" class="ipw-job-desc hide"><div></div>
+  <div id="text-{{ job }}" class="ipw-job-desc hide"><div></div>
 
-  {% include "src/ipn.io/join/" + job + ".md" %}
+{% include "src/ipn.io/join/" + job + ".md" %}
 
   </div>
 
@@ -90,31 +95,31 @@ $(document).ready(function() { jobselect('pm') })
 
 
 <div class="col-md-6 col-md-offset-3 ipw-apply" style="font-size: 16px;">
-  <hr class="ipw-divisor" style="height: 10px;" />
-  <h4>To apply, open a text editor and type:</h4>
-  <ul>
-    <li><strong>Your story</strong>. Some questions to answer:
-      what projects have you worked on?
-      what do you care about?
-      what draws you to network protocols?
-      what do you enjoy?
-      what do you like about software engineering?
-      what do you dislike?
-      what motivates you?
-      what makes you different?
-    </li>
-    <li>Links to your online profiles (<strong>GitHub</strong>, Twitter,
-      personal website, etc).</li>
-    <li>A description of your <strong>work history</strong> (whatever you
-      prefer: resume, linkedin, plaintext).</li>
-    <li>Are there things you particularly want to work on?
-      If so, be sure to let us know.</li>
-  </ul>
+<hr class="ipw-divisor" style="height: 10px;" />
+{% markdown %}
 
-  <br />
-  <p>Send it to
-  <strong>
-  <a class="ipw-apply-email" href="mailto:join+dsyseng@ipn.io">join+dsyseng@ipn.io</a></strong>.
-  And ask us any questions you have!
+#### To apply, just open a text editor and type
+
+- **Your story**. Some questions to answer:
+what projects have you worked on?
+what do you care about?
+what draws you to network protocols?
+what do you enjoy?
+what do you like about software engineering?
+what do you dislike?
+what motivates you?
+what makes you different?
+
+- Links to your online profiles (**GitHub**, Twitter, personal website, etc).
+- A description of your **work history** (whatever you prefer: resume, linkedin, plaintext).
+- Are there things you particularly want to work on? If so, let us know.
+
+{% endmarkdown %}
+
+<br />
+<p>Send it to
+<strong>
+<a class="ipw-apply-email" href="mailto:join+dsyseng@ipn.io">join+dsyseng@ipn.io</a></strong>.
+And ask us any questions you have!
 
 </div>
