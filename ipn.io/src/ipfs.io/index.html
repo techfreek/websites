@@ -1,6 +1,6 @@
 ---
 baseurl: ./
-mainimg: earth_sunrise1.jpg
+mainimg: alpha-sunrise.png
 ---
 
 {% extends "tmpl/layouts/white.html" %}
@@ -22,35 +22,39 @@ mainimg: earth_sunrise1.jpg
 {% include "tmpl/partials/ipfs.pagenav.html" %}
 
 <div class="row">
-  <hr class="ipw-spacer" />
-  <div class="col-xs-12" style="text-align: center;">
+  <hr class="ipw-sectioner" />
+  <div class="col-xs-12" style="text-align: center; font-family: Oxygen;">
+    <div style="font-size: 32px;">
+      Why We Must Distribute The Web
+    </div>
+
+    <br />
     <iframe src="//player.vimeo.com/video/54269169" width="900" height="481" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
   </div>
 </div>
 
-<div class="row">
-  <hr class="ipw-sectioner" />
-  <div class="col-xs-12" style="text-align: center; font-family: Oxygen;">
-    <div style="font-size: 32px;">IPFS can make the web faster, safer, and more open</div><div style="font-size: 18px;">With content-addressing and cryptography built in.</div>
-  </div>
-</div>
 <br />
 
-<!--
-<div class="text-center row" id="signup">
-  <hr class="ipw-spacer" />
-  <div class="col-sm-4 col-lg-3 col-lg-offset-1">
-    <i class="http://filecoin.io/static/img/disk.png"></i><br />
-    By distributing data Peer-to-Peer, IPFS speed up the web.
-  </div><div class="col-sm-4 col-lg-4">
-    <img src="http://filecoin.io/static/img/outsource.png" /><br />
-    Use Filecoin to <span class="bold">store files</span><br />
-    in the network or to <span class="bold">transact</span>
-  </div><div class="col-sm-4 col-lg-3">
-    <img src="http://filecoin.io/static/img/exchange.png" /><br />
-    <span class="bold">Exchange</span> Filecoin for other<br />
-    currencies, like Bitcoin
+<div class="row">
+  <hr class="ipw-divisor" />
+  <div class="col-xs-12" style="text-align: center; font-family: Oxygen;">
+    <div style="font-size: 32px;">
+      IPFS Alpha Demo
+    </div>
+
+    <br />
+    <iframe src="//player.vimeo.com/video/54269169" width="900" height="481" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
   </div>
 </div>
--->
+
+<br />
+
+<div class="row">
+  <div class="col-xs-12" style="text-align: center; font-family: Oxygen;">
+    <a class="btn btn-success btn-lg" href="docs/install" role="button">
+      Install IPFS Alpha &nbsp;&nbsp;<i class="fa fa-arrow-right"></i>
+    </a>
+  </div>
+</div>
+
 {% endblock %}
