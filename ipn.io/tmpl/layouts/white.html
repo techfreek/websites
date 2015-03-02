@@ -10,7 +10,7 @@
     <base href="{{ baseurl }}" />
     {% endif %}
 
-    <!-- <link rel="icon" href="favicon.ico"> -->
+    <link rel="icon" href="./styles/img/ipfs-logo-512-ice.png" type="image/png" />
 
     <title>{{ title }}</title>
 
@@ -28,8 +28,12 @@
 
     <script type="text/javascript" src="./styles/jquery/jquery.min.js"></script>
 
-    <!-- custom css -->
-    <!-- <link href="css/style.css" rel="stylesheet"> -->
+    <!-- site specific css -->
+    <!--{% if site %}-->
+      <link href="./styles/{{site}}.css" rel="stylesheet" />
+    <!--{% endif %}-->
+
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -51,8 +55,7 @@
   <div class="ipw-page">
 
   <!-- header -->
-  <div class="row ipw-main-section"
-    style="background-image: url(./styles/img/main/{{ mainimg }});">
+  <div class="row ipw-main-section">
     <div class="col-md-12">
       <!-- top links -->
 
