@@ -12,7 +12,8 @@
     "metalsmith-partial": "^0.1.0",
     "metalsmith-permalinks": "^0.4.0",
     "metalsmith-static": "0.0.5",
-    "nunjucks-markdown": "^1.0.0"
+    "nunjucks-markdown": "^1.0.0",
+    "metalsmith-templates": "~0.6.1"
   },
   "devDependencies": {
     "metalsmith-serve": "0.0.3",
