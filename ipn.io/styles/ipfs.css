@@ -2,19 +2,19 @@
 	background-color: #000;
 }
 
-@media (min-width: 500px) {
+@media {
 	.ipw-main-section {
 		background-image: url('./img/main/alpha-sunrise-600x505.png');
 	}
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 700px) {
 	.ipw-main-section {
 		background-image: url('./img/main/alpha-sunrise-1000x841.png');
 	}
 }
 
-@media (min-width: 2048px) {
+@media (min-width: 1024px) {
 	.ipw-main-section {
 		background-image: url('./img/main/alpha-sunrise-2000x1682.png');
 	}
