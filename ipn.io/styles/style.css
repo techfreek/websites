@@ -2,7 +2,10 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600);
 
 .ipw-container {
-  min-width: 380px;
+  /* removed min width for mobile */
+  padding-left: 0px;
+  padding-right: 0px;
+  margin: 0 auto;
   font-family: Oxygen;
 }
 
@@ -107,6 +110,11 @@ hr.ipw-spacer {
   /*margin-top: 10px;*/
 }
 
+ .ipw-footer-nav-col {
+  margin: 0 auto;
+  text-align: left;
+}
+
 .ipw-footer .ipw-social-media i {
   width: 36px;
   height: 36px;
@@ -126,7 +134,6 @@ hr.ipw-spacer {
   color: #0F1D57;
   border-color: #0F1D57;
 }
-
 
 .ipw-glow {
   animation:glow 2s linear infinite;
@@ -164,4 +171,23 @@ h1, h2, h3, h4 {
 
 h5 {
   font-weight: 600;
+}
+
+/* So num stars are shown */
+iframe#stars {
+  width: 180px;
+}
+
+@media screen and (max-width: 900px) {
+  .ipw-footer-nav-col {
+    text-align: center;
+  }
+  iframe#stars {
+    margin: 0 auto;
+    display: block;
+  }
+
+  p {
+    padding: 0 10px;
+  }
 }
